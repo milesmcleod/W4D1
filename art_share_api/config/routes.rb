@@ -2,7 +2,10 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   resources :users, except: [:new, :edit]
-  resources :artworks, except: [:new, :edit]
+  resources :artworks, except: [:index, :new, :edit]
+  resources :artwork_shares, only: [:create, :destroy]
+
+  get '/users/:user_id/artworks', to: 'artworks#index'
 
   # get '/users', to: 'users#index', as: 'users'
   # post '/users', to: 'users#create'

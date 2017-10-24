@@ -21,4 +21,7 @@ class Artwork < ApplicationRecord
     primary_key: :id,
     class_name: 'Comment',
     dependent: :destroy
+
+    has_many :likes, as: :likeable
+    
 end

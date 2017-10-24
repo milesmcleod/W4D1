@@ -4,8 +4,14 @@ Rails.application.routes.draw do
   resources :users, except: [:new, :edit]
   resources :artworks, except: [:index, :new, :edit]
   resources :artwork_shares, only: [:create, :destroy]
+  resources :comments, only: [:create, :destroy]
 
   get '/users/:user_id/artworks', to: 'artworks#index'
+
+  get '/users/:user_id/comments', to: 'comments#index'
+  get '/artworks/:artwork_id/comments', to: 'comments#index'
+
+
 
   # get '/users', to: 'users#index', as: 'users'
   # post '/users', to: 'users#create'

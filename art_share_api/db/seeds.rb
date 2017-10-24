@@ -22,3 +22,6 @@ artwork2.save
 
 share1 = ArtworkShare.new(artwork_id: 1, viewer_id: 1)
 share1.save
+
+comment1 = Comment.new(author_id: 1, artwork_id: 1, body: "adf")
+comment1.save

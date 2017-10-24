@@ -4,8 +4,6 @@ class ArtworksController < ApplicationController
     @owned_artworks = User.find(params[:user_id]).artworks
     @shared_artworks = User.find(params[:user_id]).shared_artworks
     render json: @owned_artworks + @shared_artworks
-
-
   end
 
   def show
